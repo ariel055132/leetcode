@@ -31,26 +31,6 @@ public class Q15 {
                     seen.add(Arrays.asList(nums[index], nums[left], nums[right]));
                     left++;
                     right--;
-                    /*
-                    // Move both pointers inward to find other potential triplets
-                    while (left < right) {
-                        if (nums[left] == nums[left + 1]) {
-                            // Skip duplicates for the left pointer
-                            left++;
-                        } else {
-                            break;
-                        }
-                    }
-                    while (left < right) {
-                        if (nums[right] == nums[right - 1]) {
-                            // Skip duplicates for the right pointer
-                            right--;
-                        } else {
-                            break;
-                        }
-                    }
-
-                     */
                 } else if (sum < 0) {
                     // If the sum is less than zero, move the left pointer to the right to increase the sum
                     left++;
