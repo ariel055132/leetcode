@@ -32,9 +32,12 @@ public class Q1_FollowUp {
             if (map.containsKey(diff)) {
                 // Put the result into the arrayList
                 ArrayList<Integer> list = new ArrayList<Integer>();
+                // Obtain the value with diff in hashmap
                 Stack<Integer> targetStack = map.get(diff);
+                // Add the index into the list
                 list.add(i);
                 list.add(targetStack.pop());
+                // Add the list to the result
                 result.add(list);
                 // If the stack is empty after pop, remove it
                 if (targetStack.isEmpty()) {
