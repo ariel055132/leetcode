@@ -1,3 +1,5 @@
+package Blind75;
+
 import java.util.HashMap;
 
 public class Q1 {

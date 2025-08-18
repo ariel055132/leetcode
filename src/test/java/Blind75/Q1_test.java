@@ -1,3 +1,6 @@
+package Blind75;
+
+import Blind75.Q1;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
