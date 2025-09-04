@@ -6,6 +6,10 @@ public class Q2730 {
      * @return length of the longest window where have at most one s[i] == s[i+1] pair
      */
     public int longestSemiRepetitiveSubstring(String s) {
+        // Edge Case: if length is zero / null
+        if (s.length() == 1 || s == null) {
+            return 1;
+        }
         int result = 0;
         int left = 0;
         int duplicatedPair = 0; // save the number of pairs where s[i] == s[i+1]
@@ -15,9 +19,15 @@ public class Q2730 {
                 duplicatedPair++;
             }
             // When duplicatedPair > 1, which means that the windows have more than one s[i] == s[i+1] pair
-            if (duplicatedPair > 1) {
-                break;
+            while (duplicatedPair > 1) {
+                // Check duplicated character
+                if (s.charAt(left) == s.charAt(left+1)) {
+                    duplicatedPair--;
+                }
+                // Change the size of sliding windows (w/ left index)
+                left++;
             }
+            // Refresh the result
             result = Math.max(result, right - left + 1);
         }
         return result;
