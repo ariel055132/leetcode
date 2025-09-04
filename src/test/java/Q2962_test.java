@@ -13,4 +13,15 @@ public class Q2962_test {
         long actualResult = q2962.countSubarrays(nums, k);
         Assertions.assertEquals(expectResult, actualResult);
     }
+
+    @Test
+    @DisplayName("Example 2")
+    void example2() {
+        Q2962 q2962 = new Q2962();
+        int[] nums = {1, 4, 2, 1};
+        int k = 3;
+        long expectResult = 0;
+        long actualResult = q2962.countSubarrays(nums, k);
+        Assertions.assertEquals(expectResult, actualResult);
+    }
 }
