@@ -1,6 +1,13 @@
 package LinkedList;
 
 public class Q876 {
+    /**
+     * Given the head of a singly linked list, return the middle node of the linked list
+     * If there are two middle nodes, return the second middle node
+     *
+     * @param head Head of singly linked list
+     * @return middle node of the linked list
+     */
     public ListNode middleNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
