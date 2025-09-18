@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class Q226_test {
+public class Q226_test extends BaseTreeTest {
     @Test
     @DisplayName("Test 1")
     void test1() {
         Q226 q226 = new Q226();
         TreeNode expectResult = invertedTree1();
         TreeNode actualResult = q226.invertTree(tree1());
-        Assertions.assertTrue(areTreesEqual(expectResult, actualResult));
+        Assertions.assertTrue(super.areTreesEqual(expectResult, actualResult));
     }
 
     @Test
@@ -20,7 +20,7 @@ public class Q226_test {
         Q226 q226 = new Q226();
         TreeNode expectResult = invertedTree2();
         TreeNode actualResult = q226.invertTree(tree2());
-        Assertions.assertTrue(areTreesEqual(expectResult, actualResult));
+        Assertions.assertTrue(super.areTreesEqual(expectResult, actualResult));
     }
 
     TreeNode tree1() {
@@ -75,12 +75,4 @@ public class Q226_test {
         return root;
     }
 
-    // Helper function to compare trees are equal
-    private boolean areTreesEqual(TreeNode tree1, TreeNode tree2) {
-        if (tree1 == null && tree2 == null) return true;
-        if (tree1 == null || tree2 == null) return false;
-        return tree1.val == tree2.val &&
-                areTreesEqual(tree1.left, tree2.left) &&
-                areTreesEqual(tree1.right, tree2.right);
-    }
 }
