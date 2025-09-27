@@ -5,7 +5,7 @@ public class Q3005 {
     /**
      * Given an array nums consisting of positive integers. (nums)
      * Return the total frequencies of elements in nums such that those elements all have the maximum frequency
-     * The frequency of an element is the number of occurences of that element in the array
+     * The frequency of an element is the number of occurrences of that element in the array
      *
      * @param nums int[]
      * @return result int
