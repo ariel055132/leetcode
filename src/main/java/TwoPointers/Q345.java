@@ -5,6 +5,9 @@ public class Q345 {
      * Given a string s, reverse only all the vowels in the string and return it.
      * The vowels are 'a', 'e', 'i', 'o', 'u', and they can appear in both lower and upper cases, more than once.
      *
+     * 1. Traverse the string from beginning and the end
+     * 2. Determine the character is vowel or not
+     * 3. If the character is vowel, do the swap
      * @param s String
      * @return reversed string
      */
