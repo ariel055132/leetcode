@@ -1,0 +1,19 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+public class Q973_test {
+    @Test
+    @DisplayName("Test 1")
+    void test1() {
+        Q973 q973 = new Q973();
+        int[][] points = {{1, 3}, {-2, 2}};
+        int k = 1;
+        int[][] expectResult = {{-2, 2}};
+        int[][] actualResult = q973.kClosest(points, k);
+        Assertions.assertArrayEquals(expectResult, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test ")
+}
