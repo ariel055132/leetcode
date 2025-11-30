@@ -15,5 +15,13 @@ public class Q973_test {
     }
 
     @Test
-    @DisplayName("Test ")
+    @DisplayName("Test 2")
+    void test2() {
+        Q973 q973 = new Q973();
+        int[][] points = {{3, 3}, {5, -1}, {-2, 4}};
+        int k = 2;
+        int[][] expectResult = {{3, 3}, {-2, 4}};
+        int[][] actualResult = q973.kClosest(points, k);
+        Assertions.assertArrayEquals(expectResult, actualResult);
+    }
 }
