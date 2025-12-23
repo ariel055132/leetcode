@@ -8,6 +8,25 @@ public class Q1874 {
      * Second-smallest with second-largest
      * etc.
      * For preventing the products from growing too large.
+     *
+     * Example 1
+     * Original nums1 = [5 3 4 2]
+     * Original nums2 = [4 2 2 5]
+     *
+     * New nums1 = [2 3 4 5]
+     * New nums2 = [5 4 2 2]
+     *
+     * 2 * 5 + 3 * 4 + 4 * 2 + 2 * 5 = 10 + 12 + 8+ 10 = 40
+     *
+     * Example 2
+     * Original nums1 = [2 1 4 5 7]
+     * Original nums2 = [3 2 4 8 6]
+     *
+     * New nums1 = [1 2 4 5 7]
+     * New nums2 = [8 6 4 3 2]
+     *
+     * 1 * 8 + 2 * 6 + 4 * 4 + 5 * 3 + 7 * 2 = 8 + 12 + 16 + 15 + 14 = 65
+     *
      * @param nums1 int[]
      * @param nums2 int[]
      * @return smallest product sum int
