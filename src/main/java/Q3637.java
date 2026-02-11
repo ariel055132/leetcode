@@ -44,4 +44,29 @@ public class Q3637 {
         }
         return index == nums.length - 1;
     }
+
+    public boolean isTrionic1(int[] nums) {
+        int p = 0;
+        int q = 0;
+        int f = 0; // f == n - 1, where n is the length of nums
+        int i = 1; // index
+        // nums[0...p] is strictly increasing
+        while (i < nums.length && nums[i - 1] < nums[i]) {
+            i++;
+        }
+        p = i - 1;
+        // nums[p...q] is strictly decreasing
+        while (i < nums.length && nums[i - 1] > nums[i]) {
+            i++;
+        }
+        q = i - 1;
+        while (i < nums.length && nums[i - 1] < nums[i]) {
+            i++;
+        }
+        f = i - 1;
+        if (p == q || p == 0 || f == q) {
+            return false;
+        }
+        return true;
+    }
 }
