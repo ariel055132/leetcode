@@ -1,8 +1,9 @@
+package HashTable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Q1512_HashMap {
+public class Q1512 {
     /**
      * Given an array of integer nums, return the number of good pairs.
      * A pair (i, j) is called good if nums[i] == nums[j] and i < j.
