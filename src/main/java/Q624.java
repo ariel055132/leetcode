@@ -14,7 +14,6 @@ public class Q624 {
 
     public int maxDistance(List<List<Integer>> arrays) {
         int result = 0;
-        Map<Integer, Integer> map = new HashMap<>();
         // init minVal and maxVal
         // maxVal can be defined as following as question is stated, each array is sorted in ascending order
         int minVal = arrays.get(0).get(0);
