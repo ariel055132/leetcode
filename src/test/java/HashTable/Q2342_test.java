@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import HashTable.Q2342;
-
 public class Q2342_test {
     @Test
     @DisplayName("Test 1")
