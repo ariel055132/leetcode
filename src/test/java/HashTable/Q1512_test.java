@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import HashTable.Q1512;
-
 public class Q1512_test {
     @Test
     @DisplayName("Test 1 Normal Case (HashMap)")
