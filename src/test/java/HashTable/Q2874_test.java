@@ -11,6 +11,7 @@ public class Q2874_test {
         Q2874 q2874 = new Q2874();
         int[] nums = {12, 6, 1, 2, 7};
         long expectResult = 77; // (12 - 1) * 7
+        // prefix = {0, }
         long actualResult = q2874.maximumTripletValue(nums);
         Assertions.assertEquals(expectResult, actualResult);
     }
