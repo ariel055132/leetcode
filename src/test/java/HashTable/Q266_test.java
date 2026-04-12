@@ -28,6 +28,10 @@ public class Q266_test {
     @Test
     @DisplayName("")
     void test3() {
-        
+        Q266 q266 = new Q266();
+        String s = "carerac";
+        boolean expectResult = true;
+        boolean actualResult = q266.canPermutePalindrome(s);
+        Assertions.assertEquals(expectResult, actualResult);
     }
 }
