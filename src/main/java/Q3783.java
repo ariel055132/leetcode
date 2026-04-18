@@ -5,6 +5,8 @@ public class Q3783 {
      * Return an integer denoting the mirror distance of n​​​​​​​.
      * abs(x) denotes the absolute value of x.
      * 
+     * Just simulate.
+     * 
      * @param n int
      * @return
      */
