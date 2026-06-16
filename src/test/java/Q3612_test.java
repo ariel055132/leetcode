@@ -32,4 +32,13 @@ public class Q3612_test {
         String actualResult = q3612.processStr(s);
         Assertions.assertEquals(expectResult, actualResult);
     }
+
+    @Test
+    void hiddenTestCase1() {
+        Q3612 q3612 = new Q3612();
+        String s = "*%";
+        String expectResult = "";
+        String actualResult = q3612.processStr(s);
+        Assertions.assertEquals(expectResult, actualResult);
+    }
 }
