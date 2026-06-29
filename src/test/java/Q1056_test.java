@@ -2,8 +2,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import Blind75.Q1;
-
 public class Q1056_test {
     @Test
     @DisplayName("Test 1")
@@ -40,6 +38,16 @@ public class Q1056_test {
     void test4() {
         Q1056 q1056 = new Q1056();
         int n = 0;
+        boolean expectResult = false;
+        boolean actualResult = q1056.confusingNumber(n);
+        Assertions.assertEquals(expectResult, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test 5")
+    void test5() {
+        Q1056 q1056 = new Q1056();
+        int n = 1689;
         boolean expectResult = true;
         boolean actualResult = q1056.confusingNumber(n);
         Assertions.assertEquals(expectResult, actualResult);
