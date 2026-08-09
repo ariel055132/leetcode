@@ -21,6 +21,9 @@ public class Q2559_test {
     void test2() {
         Q2559 q2559 = new Q2559();
         String[] words = {"a", "e", "i"};
-        int[][] queries = {{0, 2}}
+        int[][] queries = {{0, 2}, {0, 1}, {2, 2}};
+        int[] expectResult = {3, 2, 1};
+        int[] actualResult = q2559.vowelStrings(words, queries);
+        Assertions.assertArrayEquals(expectResult, actualResult);
     }
 }
