@@ -11,6 +11,7 @@ public class Q1749 {
      * Brute Force approach: emumerates everu possible subarray.
      * For each starting index, extend the ending index while maintaining a running sum
      * 
+     * Time Complexity: O(n^2)
      * @param nums
      * @return
      */
