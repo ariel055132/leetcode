@@ -12,6 +12,8 @@ public class Q3903 {
      * As 1 <= nums.length <= 100, brute force is applicable
      * Simulate as the question stated
      * 
+     * Time Complexity: O(n^2)
+     * 
      * @param nums
      * @param k
      * @return
