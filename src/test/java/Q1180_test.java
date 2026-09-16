@@ -2,7 +2,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.apple.laf.resources.aqua_zh_CN;
 
 public class Q1180_test {
     @Test
