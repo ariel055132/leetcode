@@ -56,3 +56,25 @@ public static void postOrder(TreeNode node) {
     System.out.println(root.val);
 }
 ```
+
+## Heap
+* PriorityQueue<T> heap = new PriorityHeap<T>();
+* A binary heap whose *head is the minimum under natural ordering* -> min-heap
+
+## Disjoint Set (Union-Find)
+* Use to manage dynamic connectivity (which nodes are in the same group)
+* Core operations:
+    * `find(x)`: get representative(root) of x
+    * `union(x, y)`: merge two groups if they are different
+* Optimizations:
+    * Path compression in `find`
+    * Union by size/rank in `union`
+* Time complexity: near O(1) per operation, specifically O(alpha(n)) amortized
+
+```java
+DisjointSet dsu = new DisjointSet(5);
+dsu.union(0, 1);
+dsu.union(1, 2);
+boolean sameGroup = dsu.connected(0, 2); // true
+int size = dsu.componentSize(0); // 3
+```
