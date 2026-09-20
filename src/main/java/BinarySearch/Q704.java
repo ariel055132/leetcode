@@ -52,20 +52,4 @@ public class Q704 {
         }
         return -1;
     }
-
-    /**
-     *
-     * @param nums
-     * @param target
-     * @return
-     */
-    public int searchDuplicate(int[] nums, int target) {
-        if (nums == null) {
-            return -1;
-        }
-        int left = 0;
-        int right = nums.length - 1;
-
-        return -1;
-    }
 }
