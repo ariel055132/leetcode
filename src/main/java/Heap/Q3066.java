@@ -22,6 +22,7 @@ public class Q3066 {
     public int minOpeations(int[] nums, int k) {
         int result = 0;
         // Use heap to ensure always select and remove two smallest integers from nums
+        // Long is used to prevent integer overflow
         PriorityQueue<Long> pq = new PriorityQueue<>();
         // Insert every input number into the heap
         for (int num : nums) {
