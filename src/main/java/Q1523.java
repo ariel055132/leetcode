@@ -1,9 +1,0 @@
-public class Q1523 {
-    public int countOdds(int low, int high) {
-        int result = (high - low) / 2;
-        if (low % 2 == 1 || high % 2 == 1) {
-            result++;
-        }
-        return result;
-    }
-}

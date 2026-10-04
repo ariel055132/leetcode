@@ -7,6 +7,7 @@
 ## 快速導覽
 
 - [依主題找題解](#題解分類)
+- [依考點閱讀題解索引](src/main/java/PATTERN_INDEX.md)
 - [閱讀筆記](#解題筆記)
 - [設定環境與執行測試](#環境與執行方式)
 - [了解檔名慣例](#檔名慣例)
@@ -19,8 +20,11 @@ leetcode/
 ├── pom.xml                     # Maven 設定與 JUnit 相依套件
 ├── src/
 │   ├── main/java/
-│   │   ├── Q<number>.java      # 直接放在根目錄的題解
+│   │   ├── PATTERN_INDEX.md   # 原根目錄題解的考點分類與搬移對照
 │   │   ├── BinarySearch/       # 依演算法、資料結構分類
+│   │   ├── HashTable/
+│   │   │   ├── README.md       # HashMap Pattern 筆記
+│   │   │   └── TEMPLATES.md    # 可重用的 Java HashMap 模板
 │   │   ├── PrefixSum/
 │   │   │   └── README.md       # Prefix Sum Pattern 筆記
 │   │   ├── …
@@ -29,7 +33,7 @@ leetcode/
 │   │   ├── WeeklyContest*/     # 週賽練習（另有 Contest468/）
 │   │   ├── BiWeeklyContest*/   # 雙週賽練習
 │   │   └── Code.md             # 常用程式片段與資料結構筆記
-│   └── test/java/             # JUnit 測試，多數對應題解分類
+│   └── test/java/             # JUnit 測試，package 與對應題解一致
 └── .codex/skills/              # 題目解說與 Pattern 筆記輔助技能
 ```
 
@@ -51,19 +55,37 @@ leetcode/
 | 字典樹 | [Trie](src/main/java/Trie/) |
 | 回溯 | [BackTracking](src/main/java/BackTracking/) |
 | 位元運算 | [BitManipulation](src/main/java/BitManipulation/) |
+| 貪心 | [Greedy](src/main/java/Greedy/) |
+| 排序 | [Sorting](src/main/java/Sorting/) |
+| 動態規劃 | [DynamicProgramming](src/main/java/DynamicProgramming/) |
+| 遞迴結構 | [Recursion](src/main/java/Recursion/) |
+| 區間樹 | [SegmentTree](src/main/java/SegmentTree/) |
+| 有序映射 | [OrderedMap](src/main/java/OrderedMap/) |
+| 矩陣 | [Matrix](src/main/java/Matrix/) |
+| 幾何 | [Geometry](src/main/java/Geometry/) |
+| 數學與數位運算 | [Math](src/main/java/Math/) |
+| 陣列掃描與連續段 | [ArrayScan](src/main/java/ArrayScan/) |
+| 字串解析與匹配 | [StringAlgorithms](src/main/java/StringAlgorithms/) |
+| 模擬 | [Simulation](src/main/java/Simulation/) |
 
 其他練習入口：
 
 - [Blind 75](src/main/java/Blind75/)：目前已收錄的題單練習。
 - [Quests](src/main/java/Quests/)：以 `Q1`、`Q2` 等檔名整理的練習。
-- [所有題解與競賽目錄](src/main/java/)：包含未放入主題分類的題解，以及 `WeeklyContest*`、`BiWeeklyContest*`、`Contest468` 等競賽練習。
+- [所有題解與競賽目錄](src/main/java/)：包含各主題分類，以及 `WeeklyContest*`、`BiWeeklyContest*`、`Contest468` 等競賽練習。
 - [所有測試](src/test/java/)：查看輸入、預期結果與測試案例。
 
 ## 解題筆記
 
 | 筆記 | 內容 |
 | --- | --- |
+| [題解考點分類索引](src/main/java/PATTERN_INDEX.md) | 原根目錄 162 個題解的考點、實際 package、實作狀態與同名版本搬移對照 |
+| [HashMap Pattern](src/main/java/HashTable/README.md) | key/value 設計、Invariant、更新順序、分組與索引變形、代表題目與複習安排 |
+| [HashMap Java 模板](src/main/java/HashTable/TEMPLATES.md) | 頻率、補數、signature 分組、每組最佳值、Prefix Sum 與位置紀錄的可重用方法 |
+| [Two Pointers Pattern](src/main/java/TwoPointers/README.md) | 指標移動與 invariant、Java 模板、配對計數、代表題目、常見邊界與複習清單 |
 | [Prefix Sum Pattern](src/main/java/PrefixSum/README.md) | 適用情境、辨識訊號、核心狀態、Java 模板、代表題目、常見錯誤與複習清單 |
+| [Heap Pattern](src/main/java/Heap/README.md) | Min／Max Heap 選擇、Top K、多路合併、雙堆中位數、Java 模板與複習清單 |
+| [Tree Pattern](src/main/java/Tree/README.md) | DFS／BFS 選擇、遞迴契約、子樹摘要、路徑回溯、BST 邊界、Java 模板與複習清單 |
 | [Code 筆記](src/main/java/Code.md) | 矩陣轉置、二元搜尋樹走訪、Heap 與 Union-Find 等筆記及程式片段 |
 
 可先從題解與測試理解單題，再透過 Pattern 筆記整理共通思路。例如，對照 [Q560 題解](src/main/java/PrefixSum/Q560PrefixSum.java) 與 Prefix Sum 筆記，理解如何結合前綴和與 HashMap 計算子陣列數量。
@@ -94,6 +116,14 @@ mvn -version
 mvn compile
 ```
 
+同時編譯主程式與測試，檢查 package、import 與方法引用：
+
+```bash
+mvn test-compile
+```
+
+`test-compile` 只編譯測試；要執行測試，再使用下列指令。
+
 目前 `pom.xml` 未指定 Maven Surefire Plugin 版本，且測試檔案多採用 `Q<number>_test.java` 命名。為避免預設插件版本或測試檔名篩選導致漏跑，以下指令明確指定支援 JUnit 5 的 Surefire 版本及測試類別篩選。
 
 執行單一題目的測試：
@@ -110,7 +140,7 @@ mvn test-compile org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test '-Dte
 
 執行後可在 `target/surefire-reports/` 查看測試報告，並確認實際執行的測試數量。指定單一測試仍會先編譯整個專案的題解與測試，其他檔案若有編譯錯誤，也會阻擋執行。
 
-> 上述 Maven 指令尚未在本次撰寫 README 的環境實際驗證，因該環境未安裝 Maven；目前不宣稱全專案測試皆通過。
+本次 package 調整已使用 Maven Compiler Plugin 3.15.0 的 `compile` 與 `testCompile` 驗證成功，並以 `javac --release 17` 在全新輸出目錄編譯全部 391 個主程式檔、340 個測試檔。此次未執行測試斷言；編譯通過不代表所有題解已正確完成。
 
 ## 檔名慣例
 
@@ -121,6 +151,8 @@ mvn test-compile org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test '-Dte
 | 演算法後綴 | 區分不同解法，例如 `Q560PrefixSum.java`、`Q242_HashTable.java` |
 | `_Brute`／`_BruteForce` | 暴力解法版本，方便理解起點或比較效率 |
 | `_FollowUp`／`_Follow`／`_v2` | 延伸練習或另一個實作版本 |
+| `_Practice` | 同一 package 已有同名題解時，保留另一份練習版本，例如 `TwoPointers/Q161_Practice.java` |
+| `_Unfinished` | 保留尚未完成的骨架，例如 `TwoPointers/Q2105_Unfinished.java` |
 | `_WA` | 標記錯誤嘗試的版本，閱讀時應配合測試與題意檢查 |
 
 競賽與 Quests 目錄中的 `Q1`、`Q2` 等檔名也可能代表練習順序，不一定是 LeetCode 的正式題號。同一題可能出現在不同目錄，查找時可在 IDE 以檔名搜尋，例如 `Q560`。
