@@ -1,4 +1,4 @@
-package OrderedMap;
+package HashTable;
 
 import java.util.Collections;
 import java.util.HashMap;
